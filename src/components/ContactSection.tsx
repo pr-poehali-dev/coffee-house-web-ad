@@ -16,6 +16,24 @@ export const ContactSection = () => {
           </p>
         </div>
 
+        {/* Рекламное видео */}
+        <div className="mb-16 rounded-lg overflow-hidden shadow-lg">
+          <div className="aspect-w-16 aspect-h-9">
+            <iframe 
+              className="w-full h-[500px]"
+              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
+              title="Рекламное видео Coffee House"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+              allowFullScreen
+            ></iframe>
+          </div>
+          <div className="bg-white p-6 text-center">
+            <h3 className="text-2xl font-playfair font-bold text-coffee-black mb-2">Наша атмосфера</h3>
+            <p className="text-coffee-dark">Погрузитесь в уютную атмосферу нашей кофейни уже сейчас через наше видео</p>
+          </div>
+        </div>
+
         <div className="grid md:grid-cols-2 gap-12">
           <div>
             <div className="bg-white rounded-lg shadow-lg p-8 h-full">
@@ -124,7 +142,7 @@ export const ContactSection = () => {
           <div className="absolute inset-0 bg-coffee-dark/30 flex items-center justify-center">
             <div className="text-center bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-playfair font-bold text-coffee-black mb-2">Карта загружается...</h3>
-              <p className="text-coffee-dark mb-4">Мы находимся в центре города, в пешей доступности от остановок</p>
+              <p className="text-coffee-dark mb-4">Мы находимся в центре Улан-Удэ, рядом с основными достопримечательностями</p>
               <Button className="bg-coffee-medium hover:bg-coffee-dark text-white">
                 Показать на Google Maps
               </Button>
