@@ -16,21 +16,47 @@ export const ContactSection = () => {
           </p>
         </div>
 
-        {/* Рекламное видео */}
+        {/* Загрузка пользовательского видео */}
         <div className="mb-16 rounded-lg overflow-hidden shadow-lg">
           <div className="aspect-w-16 aspect-h-9">
-            <iframe 
-              className="w-full h-[500px]"
-              src="https://www.youtube.com/embed/dQw4w9WgXcQ" 
-              title="Рекламное видео Coffee House"
-              frameBorder="0"
-              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-              allowFullScreen
-            ></iframe>
+            <div className="w-full h-[500px] bg-coffee-light flex flex-col items-center justify-center p-6">
+              <h3 className="text-2xl font-playfair font-bold text-coffee-black mb-4">Загрузите ваше рекламное видео</h3>
+              <p className="text-coffee-dark mb-6 text-center">Вы можете загрузить собственное видео, которое будет отображаться здесь</p>
+              <label className="cursor-pointer bg-coffee-medium hover:bg-coffee-dark text-white py-3 px-6 rounded-lg transition-colors">
+                <span>Выберите видео-файл</span>
+                <input 
+                  type="file" 
+                  accept="video/*" 
+                  className="hidden" 
+                  onChange={(e) => {
+                    const file = e.target.files?.[0];
+                    if (file) {
+                      const videoElement = document.getElementById('uploaded-video') as HTMLVideoElement;
+                      const videoUrl = URL.createObjectURL(file);
+                      videoElement.src = videoUrl;
+                      
+                      // Показываем видео и скрываем форму загрузки
+                      document.getElementById('video-upload-form')?.classList.add('hidden');
+                      document.getElementById('video-container')?.classList.remove('hidden');
+                    }
+                  }}
+                />
+              </label>
+            </div>
+            <div id="video-container" className="hidden w-full h-[500px]">
+              <video 
+                id="uploaded-video"
+                className="w-full h-full object-cover" 
+                controls
+                playsInline
+              >
+                Ваш браузер не поддерживает видео.
+              </video>
+            </div>
           </div>
           <div className="bg-white p-6 text-center">
             <h3 className="text-2xl font-playfair font-bold text-coffee-black mb-2">Наша атмосфера</h3>
-            <p className="text-coffee-dark">Погрузитесь в уютную атмосферу нашей кофейни уже сейчас через наше видео</p>
+            <p className="text-coffee-dark">Погрузитесь в уютную атмосферу нашей кофейни через наше видео</p>
           </div>
         </div>
 
