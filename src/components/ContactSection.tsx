@@ -25,7 +25,7 @@ export const ContactSection = () => {
                 <ContactInfo 
                   icon={<MapPin />} 
                   title="Адрес" 
-                  content={<>ул. Кофейная, 42<br />Москва, 123456</>} 
+                  content={<>Республика Бурятия, город Улан-Удэ<br />ул. Ербанова 4</>} 
                 />
                 
                 <ContactInfo 
@@ -124,7 +124,7 @@ export const ContactSection = () => {
           <div className="absolute inset-0 bg-coffee-dark/30 flex items-center justify-center">
             <div className="text-center bg-white p-6 rounded-lg shadow-lg">
               <h3 className="text-xl font-playfair font-bold text-coffee-black mb-2">Карта загружается...</h3>
-              <p className="text-coffee-dark mb-4">Мы находимся в центре города, в пешей доступности от метро</p>
+              <p className="text-coffee-dark mb-4">Мы находимся в центре города, в пешей доступности от остановок</p>
               <Button className="bg-coffee-medium hover:bg-coffee-dark text-white">
                 Показать на Google Maps
               </Button>
